@@ -1,18 +1,7 @@
 name: Enterprise CI ECR Pipeline
 
-# Trigger Configuration
+# Trigger Configuration (Manual Only)
 on:
-  push:
-    branches:
-      - main
-      - master
-      - develop
-      - feature/**
-  pull_request:
-    branches:
-      - main
-      - master
-      - develop
   workflow_dispatch:
 
 # Default Permissions (Least Privilege)
@@ -128,8 +117,8 @@ jobs:
       id-token: write # Required for AWS OIDC authentication
 
     env:
-      AWS_REGION: "us-east-1" # Replace with your target AWS Region
-      ECR_REPOSITORY: "zomato" # Your ECR repository name
+      AWS_REGION: "us-east-1"
+      ECR_REPOSITORY: "zomato"
 
     steps:
       # Checkout Repository
