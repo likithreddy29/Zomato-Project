@@ -149,13 +149,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Trivy Security Scan
-      - name: Install Trivy
-        uses: aquasecurity/setup-trivy@v0.2.2
-        with:
-          mode: config
-
       - name: Run Trivy Filesystem Scan
-        uses: aquasecurity/setup-trivy@v0.2.2
+        uses: aquasecurity/trivy-action@master
         with:
           scan-type: fs
           scan-ref: .
