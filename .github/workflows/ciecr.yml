@@ -129,7 +129,7 @@ jobs:
 
     env:
       AWS_REGION: "us-east-1" # Replace with your target AWS Region
-      ECR_REPOSITORY: "nodejsimage" # Your ECR repository name
+      ECR_REPOSITORY: "zomato" # Your ECR repository name
 
     steps:
       # Checkout Repository
