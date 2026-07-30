@@ -1,4 +1,4 @@
-name: Enterprise CI Pipeline
+name: Enterprise CI ECR Pipeline
 
 # Trigger Configuration
 on:
