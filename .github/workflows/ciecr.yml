@@ -213,11 +213,13 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.created=${{ github.run_id }}
 
-      # Update Docker Cache
-      - name: Update Docker Cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+    # Update Docker Cache
+          if: always()
+          run: |
+            if [ -d "/tmp/.buildx-cache-new" ]; then
+              rm -rf /tmp/.buildx-cache
+              mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+            fi
 
       # Smoke Test Container
       - name: Smoke Test Container
